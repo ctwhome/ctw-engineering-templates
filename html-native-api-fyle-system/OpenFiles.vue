@@ -1,65 +1,88 @@
 <template>
-  <v-card class="pa-4" outlined>
-    <div class="d-flex">
-      <v-btn
-        depressed
-        :color="isTreeEmpty ? 'default' : 'primary'"
-        :loading="loadingFiles"
-        @click="open"
-      >
-        Open directory
-      </v-btn>
-      <div v-if="isTreeEmpty" class="d-flex">
-        <template>
-          <v-row no-gutters justify="center" class="mx-6">
-            <v-dialog v-model="dialog" scrollable max-width="600px">
-              <template v-slot:activator="{ on, attrs }">
-                <v-hover>
-                  <div v-bind="attrs" v-on="on" class="mt-1">
-                    <v-icon color="blue lighten-3">{{ mdiFolder }}</v-icon>
-                    {{ numberFiles.directories }}
-                    <v-icon color="blue lighten-3">{{ mdiFileDocumentOutline }}</v-icon>
-                    {{ numberFiles.files }}
-                  </div>
-                </v-hover>
-              </template>
-              <v-card>
-                <v-card-title>Opened files and directories</v-card-title>
-                <v-divider></v-divider>
-                <v-card-text style="height: 700px">
-                  <div
-                    v-for="(item, key) in tree"
-                    :key="key"
-                    class="item"
-                    @click="fileClicked(item)"
-                  >
-                    {{ key }}
-                    <v-icon color="blue lighten-3">
-                      {{ item.handle.kind === 'file' ? mdiFileDocumentOutline : mdiFolder }}
-                    </v-icon>
-                    {{ item.name }}
-                  </div>
-                </v-card-text>
-                <v-divider></v-divider>
-                <v-card-actions>
-                  <v-btn color="blue darken-1" text @click="dialog = false"> Close </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-dialog>
-          </v-row>
-        </template>
-
-        <v-btn icon @click="cleanDB">
-          <v-icon>{{ mdiClose }}</v-icon>
+  <div>
+    <h2>Access to the native file system API</h2>
+    <p>
+      The File System Access API allows web apps to read or save changes
+      directly to files and folders on the user's device.
+      <a href="https://web.dev/file-system-access/" target="_blank">
+        Read the blog
+      </a>
+    </p>
+    <p>
+      This component stores the binary object into indexDB to have access to the
+      file system when reloading. The user needs to grand access once again.
+    </p>
+    <v-card class="pa-4" outlined>
+      <div class="d-flex">
+        <v-btn
+          depressed
+          :color="isTreeEmpty ? 'default' : 'primary'"
+          :loading="loadingFiles"
+          @click="open"
+        >
+          Open directory
         </v-btn>
+        <div v-if="isTreeEmpty" class="d-flex">
+          <template>
+            <v-row no-gutters justify="center" class="mx-6">
+              <v-dialog v-model="dialog" scrollable max-width="600px">
+                <template v-slot:activator="{ on, attrs }">
+                  <v-hover>
+                    <div v-bind="attrs" class="mt-1" v-on="on">
+                      <v-icon color="blue lighten-3">{{ mdiFolder }}</v-icon>
+                      {{ numberFiles.directories }}
+                      <v-icon color="blue lighten-3"
+                        >{{ mdiFileDocumentOutline }}
+                      </v-icon>
+                      {{ numberFiles.files }}
+                    </div>
+                  </v-hover>
+                </template>
+                <v-card>
+                  <v-card-title>Opened files and directories</v-card-title>
+                  <v-divider></v-divider>
+                  <v-card-text>
+                    <div
+                      v-for="(item, key) in tree"
+                      :key="key"
+                      class="item"
+                      @click="fileClicked(item)"
+                    >
+                      {{ key }}
+                      <v-icon color="blue lighten-3">
+                        {{
+                          item.handle.kind === 'file'
+                            ? mdiFileDocumentOutline
+                            : mdiFolder
+                        }}
+                      </v-icon>
+                      {{ item.name }}
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions>
+                    <v-btn color="blue darken-1" text @click="dialog = false">
+                      Close
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
+            </v-row>
+          </template>
+
+          <v-btn icon @click="cleanDB">
+            <v-icon>{{ mdiClose }}</v-icon>
+          </v-btn>
+        </div>
       </div>
-    </div>
-  </v-card>
+    </v-card>
+  </div>
 </template>
 
 <script>
-import { mdiFileDocumentOutline, mdiFolder, mdiClose } from '@mdi/js'
-import { openDB, deleteDB } from 'idb'
+import { mdiClose, mdiFileDocumentOutline, mdiFolder } from '@mdi/js'
+import { deleteDB, openDB } from 'idb'
+
 export default {
   name: 'OpenFiles',
   data() {
@@ -167,6 +190,7 @@ export default {
 .item {
   padding: 4px;
 }
+
 .item:hover {
   background-color: #eee;
 }
