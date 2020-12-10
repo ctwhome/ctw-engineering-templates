@@ -1,7 +1,7 @@
-/*
- * Access to native file system selector with Vue.
- * @author J.Gonzalez @ctwhome
- */
+<!--
+  Access to native file system selector with Vue.
+  @author J.Gonzalez @ctwhome
+-->
 <template>
   <div>
     <h2>Access to the native file system API</h2>
