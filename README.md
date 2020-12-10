@@ -7,4 +7,4 @@
 Self developed and hand-picked code templates and snippets for:
 - HTML5 (APIs)
 - CSS (Sass)
-- JS (Vue, Nuxt)
+- JS (Vue, Nuxt, Node)
