@@ -8,6 +8,7 @@
 
 links:
 * https://developer.microsoft.com/en-us/identity/add-sign-in-with-microsoft
+* https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant
 * portal.azure.com
 
 
