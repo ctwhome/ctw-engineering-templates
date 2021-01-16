@@ -7,6 +7,12 @@ Parts:
 - Middleware for protection
 - User Store
 
+## Install
+* Install nuxt firebase and pwa if it is not yet installed
+`yarn add firebase @nuxtjs/firebase @nuxtjs/pwa`
+* Register and app and get the config file from firebase console 
+
+
 extra:
 
 - vuex-easy-firestore (Working version with ease-vuex-firestate)
@@ -55,5 +61,5 @@ firebase: {
         ssr: false, // default
       },
     },
-}
+},
 ```
