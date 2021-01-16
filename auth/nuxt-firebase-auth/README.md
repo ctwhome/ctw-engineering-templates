@@ -5,13 +5,13 @@ Parts:
 - Components (LoginButton with avatar and popup)
 - Pages (Profile)
 - Middleware for protection
-- User Store
+- User Store (Vuex)
 
 ## Install
-* Install nuxt firebase and pwa if it is not yet installed
-`yarn add firebase @nuxtjs/firebase @nuxtjs/pwa`
-* Register and app and get the config file from firebase console 
 
+- Install nuxt firebase and pwa if it is not yet installed
+  `yarn add firebase @nuxtjs/firebase @nuxtjs/pwa`
+- Register and app and get the config file from firebase console
 
 extra:
 
