@@ -1,5 +1,5 @@
 export default function ({ store, redirect }) {
-  if (!store.getters.isLoggedIn) {
+  if (!store.getters["user/isLoggedIn"]) {
     return redirect('/login')
   }
 }
