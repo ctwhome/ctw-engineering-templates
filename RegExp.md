@@ -23,3 +23,4 @@ console.log(textA.match(regexOne));
 | Get file extension | `\.(mov\|mp4\|mpg\|f3)$/mg` |'Isn't this fun?' |
 | Phone number |`\(\d\d\d\) \d\d\d-?\d\d\d\d` |(562) 988-1688 || Dashes |
 | ID or tracking number | `Tracking ID\:\s*(\w*)\s*` | Tracking ID: 12KDF7Q89WFL |
+| whole words only | `\b` => `\bword\b` | This **word** is selected. |
