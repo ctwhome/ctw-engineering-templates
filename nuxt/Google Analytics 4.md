@@ -12,7 +12,7 @@ Add env and the plugin to `Nuxt.config.js`:
 ```js
 export default {
   env: {
-    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,   // Note that this is the name it has to be passed inside 
   },
   ...
   
@@ -27,7 +27,7 @@ import Vue from 'vue'
 import VueGtag from 'vue-gtag'
 
 Vue.use(VueGtag, {
-  config: { id: process.env.GOOGLE_ANALYTICS_ID } //'G-XXXXXXXXXX' 
+  config: { id: process.env.googleAnalyticsId } //'G-XXXXXXXXXX' 
 })
 ```
 Passing router (from the plugin):
