@@ -30,7 +30,7 @@ Vue.use(VueGtag, {
   config: { id: process.env.googleAnalyticsId } //'G-XXXXXXXXXX' 
 })
 ```
-Passing router (from the plugin):
+Passing the router (inside the plugin):
 ```js
 import Vue from 'vue'
 import VueGtag from 'vue-gtag'
