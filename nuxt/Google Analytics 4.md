@@ -1,3 +1,5 @@
+# Google Analytics 4 with Nuxt
+
 nuxt/google-analytics is using the legacy Universal Analytics. To use the new Google Analytics 4 we use 'vue-tag' installed as a plugin for nuxt. More info [here](https://stackoverflow.com/questions/64612031/setup-google-analytics-4-in-nuxt-js)
 
 
