@@ -22,7 +22,7 @@ export default {
 ```
 
 Create Plugin file: `plugins/gtag.js`:
-```
+```js
 import Vue from 'vue'
 import VueGtag from 'vue-gtag'
 
@@ -31,7 +31,7 @@ Vue.use(VueGtag, {
 })
 ```
 Passing router (from the plugin):
-```
+```js
 import Vue from 'vue'
 import VueGtag from 'vue-gtag'
 
