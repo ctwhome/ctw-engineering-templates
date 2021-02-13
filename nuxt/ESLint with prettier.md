@@ -4,8 +4,15 @@ ESLint will warn if a developer uses a variable without declaring it first. Or i
 
 
 
-## Disable ESLint Block code
-All rules:
+## Disable ESLint line or Block code
+Disable line:
+```js
+// eslint-disable-line 
+or 
+// eslint-disable-line <rule1, rule2> 
+```
+
+All rules block:
 
 ```js
 /* eslint-disable */
