@@ -21,7 +21,7 @@ With specific rules:
 /* eslint-enable <rule1, rule2> */
 ```
 
-## Disable nux EsLint black overlay
+## Disable Nuxt EsLint black overlay
 // nuxt.config.js
 ```js
 build: {
