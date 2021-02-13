@@ -4,10 +4,12 @@ ESLint will warn if a developer uses a variable without declaring it first. Or i
 
 
 // nuxt.config.js
+```js
 build: {
-  hotMiddleware: {
+    hotMiddleware: {
     client: {
-      overlay: false
-    }
-  }
+      overlay: false,
+    },
+  },
 }
+```
