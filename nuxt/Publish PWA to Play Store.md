@@ -16,7 +16,7 @@ Notes:
 - The app shows in inside the browser window.. not nice
 
 
-## Publish into the Andoird Play Store
+## Publish into the Android Play Store
 
 > => [Page intrctions here](https://github.com/pwa-builder/CloudAPK/blob/master/Next-steps.md)
  
