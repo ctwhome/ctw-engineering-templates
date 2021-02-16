@@ -17,7 +17,29 @@ build: {
 ## Run precommit Hook for EsLint
 
 CONTINUE HERE
-USING HUSK
+
+1. Install husky
+```shell
+yarn add husky --dev
+```
+2. Enable Git hooks
+```shell
+yarn husky install
+```
+3. To automatically have Git hooks enabled after install, edit package.json
+```js
+// package.json
+{
+  "private": true,
+   scripts": {
+    "postinstall": "husky install",
+  }
+}
+```
+4. Add a hook. To add a hook, you can use husky add <file> [cmd] (don't forget to run husky install before).
+```shell
+npx husky add .husky/pre-commit "yarn lint"
+```
 
 
 
