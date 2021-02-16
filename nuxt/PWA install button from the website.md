@@ -2,6 +2,7 @@ description here
 
 - Vue
 - Vuetify
+- js-cookie `yarn add js-cookie`
 
 ```vue
 <template>
@@ -28,6 +29,8 @@ description here
   </div>
 </template>
 <script>
+import Cookies from "js-cookie";
+
 export default {
   name: "App",
   data() {
@@ -38,8 +41,11 @@ export default {
   created() {
     window.addEventListener("beforeinstallprompt", e => {
       e.preventDefault();
-      // Stash the event so it can be triggered later.
-      this.deferredPrompt = e;
+     // Stash the event so it can be triggered later.
+      if (Cookies.get("add-to-home-screen") === undefined) {
+        this.deferredPrompt = e;
+      }
+
     });
     window.addEventListener("appinstalled", () => {
       this.deferredPrompt = null;
@@ -47,6 +53,7 @@ export default {
   },
   methods: {
     async dismiss() {
+      Cookies.set("add-to-home-screen", null, { expires: 15 });
       this.deferredPrompt = null;
     },
     async install() {
@@ -55,4 +62,9 @@ export default {
   }
 };
 </script>
+```
+When we click on the dismiss button, the banner disappears, but if we refresh the page, it will appear again. Considering that this is not user friendly, let’s make the banner appear again only 15 days after the user clicks in the dismiss button.
+
+```shell
+yarn add -D js-cookie
 ```
