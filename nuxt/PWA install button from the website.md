@@ -1,9 +1,12 @@
-description here
+Component to show install application directly to your mobile/desktop
 
 - Vue
 - Vuetify
 - js-cookie `yarn add -D js-cookie`
 
+![image](https://user-images.githubusercontent.com/4195550/108035172-dc35f280-7036-11eb-845a-843745fd873a.png)
+
+Component/InstallApp.vue
 ```vue
 <template>
   <div id="app">
