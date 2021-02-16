@@ -16,8 +16,6 @@ build: {
 
 ## Run precommit Hook for EsLint
 
-CONTINUE HERE
-
 1. Install husky
 ```shell
 yarn add husky --dev
