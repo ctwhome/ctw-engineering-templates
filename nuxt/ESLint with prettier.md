@@ -2,6 +2,24 @@
 
 ESLint will warn if a developer uses a variable without declaring it first. Or if a developer uses “bind” when it's not necessary. With Prettier, your original code formatting is completely lost — it doesn't care what you think your code should look like, it just makes it conform to a set of rules
 
+## Disable Nuxt EsLint black overlay
+// nuxt.config.js
+```js
+build: {
+  hotMiddleware: {
+    client: {
+      overlay: false, // Disable Nuxt Black Screen ESLint
+    },
+  },
+}
+```
+
+## Run precommit Hook for EsLint
+
+CONTINUE HERE
+USING HUSK
+
+
 
 
 ## Disable ESLint line or Block code
@@ -28,14 +46,4 @@ With specific rules:
 /* eslint-enable <rule1, rule2> */
 ```
 
-## Disable Nuxt EsLint black overlay
-// nuxt.config.js
-```js
-build: {
-    hotMiddleware: {
-    client: {
-      overlay: false,
-    },
-  },
-}
-```
+
