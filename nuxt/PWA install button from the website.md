@@ -2,7 +2,7 @@ description here
 
 - Vue
 - Vuetify
-- js-cookie `yarn add js-cookie`
+- js-cookie `yarn add -D js-cookie`
 
 ```vue
 <template>
