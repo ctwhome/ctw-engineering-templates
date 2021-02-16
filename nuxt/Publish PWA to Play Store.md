@@ -14,3 +14,17 @@
 
 Notes: 
 - The app shows in inside the browser window.. not nice
+
+
+## Publish into the Andoird Play Store
+
+> => [Page intrctions here](https://github.com/pwa-builder/CloudAPK/blob/master/Next-steps.md)
+ 
+#### Note about Quality Criteria on Android
+As of Chrome 86, PWAs downloaded from the Google Play Store will now crash if your app:
+
+- Does not have a valid TLS certificate
+- Does not work offline
+- Does not link to your digital assetlinks file correctly
+
+Because of this you should ensure that your PWA works completely offline, runs on an HTTPS domain and has your assetlinks file linked. For the assetlinks file, please refer to Step 1 above. For your offline experience, we recommend running your PWA through PWABuilder to ensure that your PWA works offline. For more info, check out this article from our friends over on the Chrome team.
