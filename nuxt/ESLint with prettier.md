@@ -39,6 +39,7 @@ yarn husky install
 npx husky add .husky/pre-commit "yarn lint"
 ```
 
+Overpass the commit
 
 
 
