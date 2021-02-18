@@ -1,3 +1,5 @@
+Manipulate Google Spreadsheet with 'apps script'
+```js
 // Run MANUALLY WHEN MODIFYING THE 
 
 var activeSheet = SpreadsheetApp.getActiveSheet();
@@ -46,3 +48,4 @@ var rigth =range.offset(0, 1) // cell at the right
   rigth.offset(0, 2).setValue(e.oldValue)
   range.offset(0, 2).setValue(e.value)
 }
+```
