@@ -5,7 +5,11 @@ Composition API allows to create  reactive primitives (Arrays, Objects, string..
 - What it is returned in the setup function, it is accesible in the rest of the vue component. 
 - It can replace methods, computed and state properties from the option Api. 
 - Ref(<primitives>) converts primitives to reactive primitives, Reactive({}) converts Objects into reactive objects.
+- Using `lodash.isequal` to compare object with reactive object, useful for refetching data or not when the getting realtime data. 
 
+## Not solved yet: 
+- The Vuex plugins like vuex-persist allows easily to keep the data in localstorage, without it, you have to do it manually either localstorage, or indexdb. 
+- 
 
 
 ## Reactive() and Ref() 
