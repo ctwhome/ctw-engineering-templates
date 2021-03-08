@@ -8,7 +8,7 @@ Composition API allows to create  reactive primitives (Arrays, Objects, string..
 
 
 
-## Reactive and Ref 
+## Reactive() and Ref() 
 ### Ref (to use primitives)
 ```js
 // Now Vue is listening for the const title changes. and it converts 
