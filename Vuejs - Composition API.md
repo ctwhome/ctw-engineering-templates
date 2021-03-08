@@ -4,7 +4,7 @@ Composition API allows to create  reactive primitives (Arrays, Objects, string..
 - Setup function is the main entry data. 
 - What it is returned in the setup function, it is accesible in the rest of the vue component. 
 - It can replace methods, computed and state properties from the option Api. 
-- 
+- Ref(<primitives>) converts primitives to reactive primitives, Reactive({}) converts Objects into reactive objects.
 
 
 
