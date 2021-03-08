@@ -1,5 +1,5 @@
-### [{},{}...] => {id:{}, id2:{}...} 
-### Function to convert array of objects to Objects by key
+
+### [{},{}...] => {id:{}, id2:{}...}  Function to convert array of objects to Objects by key
 
 ```js
 const convertArrayToObject = (array, key) => {
