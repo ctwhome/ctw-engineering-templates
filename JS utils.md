@@ -37,3 +37,9 @@ console.log(
 }
 
 ```
+### Convert Reactive object to plain object
+```js
+const toPlainObject = (object) => {
+  return JSON.parse(JSON.stringify(object))
+}
+```
