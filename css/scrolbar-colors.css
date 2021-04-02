@@ -1,3 +1,6 @@
+// Import with 
+// @import './scrollbar-color.css';
+
 /* Scrollbar colors*/
 html {
   --scrollbarBG: #1F2435;
