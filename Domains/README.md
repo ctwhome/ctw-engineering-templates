@@ -1,3 +1,14 @@
+# TOC
+- NameCheap with Firebase
+- Google Domains with Firebase
+- Namecheap with Netlify
+
+
+# Namecheap with Netlify
+You only need to set a custom dns server in namecheap with the ones provided by Netlify
+![image](https://user-images.githubusercontent.com/4195550/115007082-e5620500-9ea9-11eb-859d-965e31113607.png)
+
+
 # NameCheap with Firebase
 It is neccessary to name the hosting as "@" instead of the domain name as firebase suggests
 Then you need all the following A and TXT records
