@@ -1,65 +1,41 @@
---
--- Name: c_posts_voted(); Type: FUNCTION; Schema: public; Owner: -
---
-
-CREATE FUNCTION c_posts_voted() RETURNS trigger
-    LANGUAGE plpgsql
-    AS $$      BEGIN
-        UPDATE "posts" SET voted_user_ids = array_append(voted_user_ids, NEW.user_id) WHERE "id" = NEW.post_id;
-        RETURN NEW;
-      END;
-$$;
-
-
---
--- Name: cc_posts_comments_count(); Type: FUNCTION; Schema: public; Owner: -
---
-
-CREATE FUNCTION cc_posts_comments_count() RETURNS trigger
-    LANGUAGE plpgsql
-    AS $$        BEGIN
-          IF (TG_OP = 'DELETE') THEN
-            UPDATE "posts" SET "comments_count" = "comments_count" - 1 WHERE "id" = OLD.post_id;
-            RETURN OLD;
-          ELSIF (TG_OP = 'INSERT') THEN
-            UPDATE "posts" SET "comments_count" = "comments_count" + 1 WHERE "id" = NEW."post_id";
-            RETURN NEW;
-          END IF;
-        END;
-$$;
-
-
--- Alternative example
-CREATE OR REPLACE FUNCTION function_number_of_reviews() RETURNS TRIGGER AS
-
-$BODY$
-
+-- The triggers will execute the following function, and then it will be called from the triggers.
+create function update_num_organizations_in_sectors() returns trigger
+    language plpgsql
+as
+$$
 BEGIN
+    IF (TG_OP = 'INSERT') THEN
+        UPDATE sectors SET num_organizations = num_organizations + 1 WHERE id = NEW.sector_id;
+        RETURN NULL;
+    ELSEIF (TG_OP = 'DELETE') THEN
+        UPDATE sectors SET num_organizations = num_organizations - 1 WHERE id = OLD.sector_id;
+        RETURN NULL;
+    ELSEIF (TG_OP = 'UPDATE') THEN
+        UPDATE sectors SET num_organizations = num_organizations + 1 WHERE id = NEW.sector_id;
+        UPDATE sectors SET num_organizations = num_organizations - 1 WHERE id = OLD.sector_id;
+        RETURN NULL;
+    END IF;
+END
+$$;
 
-    if TG_OP='INSERT' then
 
-       Update public."Listing" set number_of_reviews = number_of_reviews + 1 where id = new.listing_id;
 
-    end if;
+-- CREATION OF THE TRIGGERS FOR THE SECTOR TABLE (in this example)
 
-    if TG_OP='DELETE' then
+create trigger update_num_organizations_in_sectors
+    after update
+    of sector_id on organizations
+    for each row
+execute procedure update_num_organizations_in_sectors();
 
-        Update public."Listing" set number_of_reviews = number_of_reviews - 1 where id = old.listing_id;
+create trigger insert_num_organizations_in_sectors
+    after insert
+    on organizations
+    for each row
+execute procedure update_num_organizations_in_sectors();
 
-    end if;
-
-    RETURN new;
-
-END;
-
-$BODY$
-
-language plpgsql;
-
-CREATE TRIGGER trig_number_of_reviews
-
-     AFTER INSERT OR DELETE ON public."Review"
-
-     FOR EACH ROW
-
-     EXECUTE PROCEDURE function_number_of_reviews();
+create trigger delete_num_organizations_in_sectors
+    after delete
+    on organizations
+    for each row
+execute procedure update_num_organizations_in_sectors();
