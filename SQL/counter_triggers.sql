@@ -27,3 +27,39 @@ CREATE FUNCTION cc_posts_comments_count() RETURNS trigger
           END IF;
         END;
 $$;
+
+
+-- Alternative example
+CREATE OR REPLACE FUNCTION function_number_of_reviews() RETURNS TRIGGER AS
+
+$BODY$
+
+BEGIN
+
+    if TG_OP='INSERT' then
+
+       Update public."Listing" set number_of_reviews = number_of_reviews + 1 where id = new.listing_id;
+
+    end if;
+
+    if TG_OP='DELETE' then
+
+        Update public."Listing" set number_of_reviews = number_of_reviews - 1 where id = old.listing_id;
+
+    end if;
+
+    RETURN new;
+
+END;
+
+$BODY$
+
+language plpgsql;
+
+CREATE TRIGGER trig_number_of_reviews
+
+     AFTER INSERT OR DELETE ON public."Review"
+
+     FOR EACH ROW
+
+     EXECUTE PROCEDURE function_number_of_reviews();
