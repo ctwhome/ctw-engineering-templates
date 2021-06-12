@@ -45,14 +45,14 @@ export default {
   ],
   firebase: {
     config: {
-      apiKey: process.env.VUE_APP_FIREBASE_API_KEY || 'AIzaSyCdGNpm9WHTALTW0eV7Yr9PLwE1eyLKNqs',
-      authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN || 'valorlistcom.firebaseapp.com',
+      apiKey: process.env.VUE_APP_FIREBASE_API_KEY || '',
+      authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN || '',
       // databaseURL: process.env.VUE_APP_FIREBASE_DB_URL ,
-      projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID || 'valorlistcom',
-      storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET || 'valorlistcom.appspot.com',
+      projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID || '',
+      storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET || '',
       messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
-      appId: process.env.VUE_APP_FIREBASE_APP_ID || '1:306078714150:web:1a7ee1a43384abc88399e7',
-      measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID || '306078714150'
+      appId: process.env.VUE_APP_FIREBASE_APP_ID || '',
+      measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID || ''
     },
     services: {
       auth: {
