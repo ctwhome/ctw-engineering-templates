@@ -16,6 +16,7 @@ module.exports = {
   // Enable JIT for nuxt-tailwindcss
   mode: 'jit',
   plugins: [
+    require('@tailwindcss/typography'),
     require('daisyui')
   ]
 
