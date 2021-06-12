@@ -1,4 +1,5 @@
-Add the theme to the header:  in nuxt.config.js
+Add the theme to the header: in nuxt.config.js
+
 ```js
 head:{
   ...
@@ -9,13 +10,14 @@ head:{
 ```
 
 Add the `tailwind.config.js` file
-```js
-module.exports = {
 
+```js
+module.exports = {  
+  // Enable JIT for nuxt-tailwindcss
+  mode: 'jit',
   plugins: [
     require('daisyui')
   ]
 
 }
-
 ```
