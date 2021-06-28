@@ -20,3 +20,30 @@
       </div>
     </div>
 ```
+
+## Responsive Layout
+
+[https://play.tailwindcss.com/YfboyLNqvM?size=538x287](https://play.tailwindcss.com/YfboyLNqvM?size=538x287)
+
+![](https://user-images.githubusercontent.com/4195550/123655917-b95eea80-d82f-11eb-9cc1-1f6513949343.png)
+
+```html
+
+<div class="flex flex-col w-screen h-screen bg-gray-100">
+  <!-- Top -->
+  <div class="bg-gray-400 p-2">Toolbar</div>
+
+  <!-- Middle -->
+  <div class="flex h-full overflow-auto">
+    <!-- Sidebar -->
+    <div class="w-60 bg-gray-500 text-white">Sidebar</div>
+    <!-- Content -->
+    <div class="w-full overflow-auto">
+      <img class="object-contain w-auto h-full max-w-full max-h-full" src="https://images.ctfassets.net/lzny33ho1g45/T5qqQQVznbZaNyxmHybDT/b76e0ff25a495e00647fa9fa6193a3c2/best-url-shorteners-00-hero.png" alt="" />
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bg-gray-400 p-2">Footer</div>
+</div>
+```
