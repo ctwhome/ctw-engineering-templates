@@ -1,4 +1,4 @@
-## Dropdown in Vue!!
+## Dropdown with DaisyUI and no Js!!
 
 ```
  <div ref="dropdown" tabindex="0">
@@ -6,7 +6,7 @@
       <div tabindex="0" class="btn" @click="openMenu">
         Menu
       </div>
-      <div class="shadow menu dropdown-content bg-base-100  w-72 h-72 overflow-y-auto">
+      <div class="shadow menu dropdown-content bg-base-100 w-72 h-72 overflow-y-auto">
         <div
           v-for="item in itmes"
           :key="i"
