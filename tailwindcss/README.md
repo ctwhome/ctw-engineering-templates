@@ -1,3 +1,15 @@
+## DaisyUI themes with Nuxt
+
+```javascript
+head: {
+	...
+	 htmlAttrs: {
+      'data-theme': 'light' // https://daisyui.com/docs/default-themes
+    }
+	...
+}
+```
+
 ## Dropdown with DaisyUI and no Js!!
 
 ```
