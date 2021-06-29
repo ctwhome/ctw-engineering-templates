@@ -2,12 +2,29 @@
 
 ```javascript
 head: {
-	...
-	 htmlAttrs: {
+    ...
+     htmlAttrs: {
       'data-theme': 'light' // https://daisyui.com/docs/default-themes
     }
-	...
+    ...
 }
+```
+
+## Modal with closing from outside
+
+```html
+<label for="my-modal-2" class="btn btn-primary modal-button">open modal</label> 
+
+<input type="checkbox" id="my-modal-2" class="modal-toggle"> 
+<label class="modal" for="my-modal-2">
+  <label class="modal-box">
+    <p>Enim dolorem dolorum omnis atque necessitatibus. Consequatur aut adipisci qui iusto illo eaque. Consequatur repudiandae et. Nulla ea quasi eligendi. Saepe velit autem minima.</p> 
+    <div class="modal-action">
+      <label for="my-modal-2" class="btn btn-primary">Accept</label> 
+      <label for="my-modal-2" class="btn">Close</label>
+    </div>
+  </label>
+</label>
 ```
 
 ## Dropdown with DaisyUI and no Js!!
