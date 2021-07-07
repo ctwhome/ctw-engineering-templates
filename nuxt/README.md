@@ -6,9 +6,8 @@
 yarn add -D lint-staged husky
 ```
 
-package.json
-
 ```javascript
+// package.json
 ...
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -24,15 +23,16 @@ package.json
 
 ### is Dev
 
-nuxt.config.js
-
 ```javascript
+// nuxt.config.js
 const isDev = process.env.NODE_ENV === 'development'
 ```
 
 Deploying to GitHub pages
 
 ```javascript
+// nuxt.config.js
+
   // If deploying on github pages
   // http://<username>.github.io/<repository-name>.
   router: {
