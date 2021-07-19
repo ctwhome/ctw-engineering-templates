@@ -59,6 +59,76 @@ export default {
 }
 ```
 
+## Nuxt content with Feed RSS
+
+nuxt.config.js
+
+install dependencies:
+
+```
+
+yarn add nuxt-content-body-html
+```
+
+```javascript
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
+    // https://go.nuxtjs.dev/content
+    'nuxt-content-body-html',
+    '@nuxt/content',
+    '@nuxtjs/feed'
+  ],
+
+  // Create a feed
+  feed: [
+    {
+      path: '/feed.xml',
+      async create (feed, args) {
+        feed.options = {
+          title: 'Title of the feed',
+          link: isDev ? 'https://localhost:3000/feed.xml' : 'https://domain.com/feed.xml',
+          description: 'Description of the feed'
+        }
+        const { $content } = require('@nuxt/content')
+
+        const posts = await $content('posts')
+          .sortBy('date', 'desc')
+          .fetch()
+
+        const events = await $content('events')
+          .sortBy('date', 'desc')
+          .fetch()
+
+        const combinedPosts = [...posts, ...events]
+
+        combinedPosts.forEach((post) => {
+          feed.addItem({
+            title: post.title,
+            content: `
+              <p>
+                <img
+                  alt="Cover image"
+                  src="${post.image}"
+                >
+              </p>
+              ${post.bodyHtml}
+            `,
+            id: post.title,
+            link: post.path,
+            img: post.image,
+            date: new Date(post.date)
+          })
+        })
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      data: ['some', 'info']
+    }
+  ],
+```
+
 ### Awesome page transitions
 
 *   Tansition for with super nuxt https://sahkyovision.medium.com/slick-image-resize-page-transition-with-nuxt-vuejs-d903025d799f
