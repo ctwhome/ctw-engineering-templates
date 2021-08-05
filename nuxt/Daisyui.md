@@ -9,6 +9,12 @@ head:{
   }
 ```
 
+Or at any other HTML tag element
+
+```html
+<div theme="light">Content</div>
+```
+
 Add the `tailwind.config.js` file
 
 ```js
