@@ -8,6 +8,9 @@ Fetch from the \`template\` remote. If you cloned via Github, you will need to a
 # Add template repository
 git remote add template https://github.com/ctwhome/top-vite
 
-# update repo
-git fetch --all --allow-unrelated-histories
+# Update repo
+git fetch --all 
+
+# Merge the branch you want from the remote template
+git merge template/main --allow-unrelated-histories
 ```
